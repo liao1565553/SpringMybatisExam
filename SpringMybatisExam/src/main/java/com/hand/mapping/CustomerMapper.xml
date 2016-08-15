@@ -20,4 +20,8 @@
 	</insert>
 
 
+	<!-- 取消外键约束 -->
+	<select id="foreignKeyNoChecks">
+		SET FOREIGN_KEY_CHECKS = 0;
+	</select>
 </mapper>

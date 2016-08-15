@@ -15,6 +15,7 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	public boolean addCustomer(Customer customer){
 		try {
+			customerDao.foreignKeyNoChecks();
 			customerDao.insertCustomer(customer);
 		} catch (Exception e) {
 			e.printStackTrace();
