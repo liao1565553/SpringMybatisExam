@@ -64,6 +64,16 @@ public class TestCustomer {
 			System.out.println("外键限制");
 		}
 		
+		System.out.println("刚刚插入的数据是");
+		Customer customer2= customerService.getLastCustomer();
+		System.out.println("first_name:"+customer2.getFirstName());
+		System.out.println("last_name:"+customer2.getLastName());
+		System.out.println("email:"+customer2.getEmail());
+		System.out.println("address:"+customer2.getAddressId());
+		System.out.println("create_date"+customer2.getCreateDate());
+		
+		
+		
 	}
 
 	public static boolean isShort(String value) {

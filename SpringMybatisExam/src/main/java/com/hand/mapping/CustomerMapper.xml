@@ -19,6 +19,13 @@
 		values(#{storeId},#{firstName},#{lastName},#{email},#{addressId},#{createDate});
 	</insert>
 
+	<select id="getLastCustomer" resultMap="BaseResultMap">
+		select * from customer order by customer_id desc limit 1;
+	</select>
+	
+	<select id="getCustomerByID" parameterType="java.lang.Short" resultMap="BaseResultMap">
+		select * from customer where customer_id=#{id}
+	</select>
 
 	<!-- 取消外键约束 -->
 	<select id="foreignKeyNoChecks">

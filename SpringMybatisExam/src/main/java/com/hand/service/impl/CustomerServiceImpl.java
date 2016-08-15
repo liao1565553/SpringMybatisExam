@@ -9,11 +9,11 @@ import com.hand.domain.Customer;
 import com.hand.service.CustomerService;
 
 @Service
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
 	@Resource
 	private CustomerDao customerDao;
-	
-	public boolean addCustomer(Customer customer){
+
+	public boolean addCustomer(Customer customer) {
 		try {
 			customerDao.foreignKeyNoChecks();
 			customerDao.insertCustomer(customer);
@@ -23,4 +23,9 @@ public class CustomerServiceImpl implements CustomerService{
 		}
 		return true;
 	}
+
+	public Customer getLastCustomer() {
+		return customerDao.getLastCustomer();
+	}
+
 }
