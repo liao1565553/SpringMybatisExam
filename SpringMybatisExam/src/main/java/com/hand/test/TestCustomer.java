@@ -41,6 +41,7 @@ public class TestCustomer {
 			while (!addressService.isExistAid(Short.parseShort(addressId))) {
 				System.out.println("address_id不存在请重新输入(退出请输入exit)：");
 				addressId = scan.nextLine();
+				
 				if ("exit".equals(addressId)) {
 					break;
 				}
@@ -50,7 +51,7 @@ public class TestCustomer {
 		Customer customer=new Customer();
 		
 		customer.setStoreId((byte) 1);
-		customer.setAddressId((short) 1);
+		customer.setAddressId(Short.parseShort(addressId));
 		customer.setFirstName(fristName);
 		customer.setLastName(lastName);
 		customer.setEmail(email);
