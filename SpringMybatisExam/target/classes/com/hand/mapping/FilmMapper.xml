@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hand.dao.FilmDao">
+	<resultMap id="BaseResultMap" type="com.hand.domain.Film">
+		<id column="film_id" property="filmId" jdbcType="SMALLINT" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="release_year" property="releaseYear" jdbcType="DATE" />
+		<result column="language_id" property="languageId" jdbcType="TINYINT" />
+		<result column="original_language_id" property="originalLanguageId"
+			jdbcType="TINYINT" />
+		<result column="rental_duration" property="rentalDuration"
+			jdbcType="TINYINT" />
+		<result column="rental_rate" property="rentalRate" jdbcType="DECIMAL" />
+		<result column="length" property="length" jdbcType="SMALLINT" />
+		<result column="replacement_cost" property="replacementCost"
+			jdbcType="DECIMAL" />
+		<result column="rating" property="rating" jdbcType="CHAR" />
+		<result column="special_features" property="specialFeatures"
+			jdbcType="CHAR" />
+		<result column="last_update" property="lastUpdate" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<resultMap id="ResultMapWithBLOBs" type="com.hand.domain.Film"
+		extends="BaseResultMap">
+		<result column="description" property="description" jdbcType="LONGVARCHAR" />
+	</resultMap>
+	
+	<insert id="insertFilm" parameterType="com.hand.domain.Film">
+		insert into film(title,description,language_id)value(#{title},#{description},#{languageId})
+	</insert>
+
+
+
+
+
+</mapper>

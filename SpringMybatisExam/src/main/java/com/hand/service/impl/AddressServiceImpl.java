@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.hand.dao.AddressDao;
+import com.hand.domain.Address;
 import com.hand.service.AddressService;
 
 @Service
@@ -18,5 +19,13 @@ public class AddressServiceImpl implements AddressService {
 			return true;
 		}
 		return false;
+	}
+
+	public String getAddressById(Short id) {
+		Address address = addressDao.findAddressById(id);
+		if (address != null) {
+			return address.getAddress();
+		}
+		return "";
 	}
 }

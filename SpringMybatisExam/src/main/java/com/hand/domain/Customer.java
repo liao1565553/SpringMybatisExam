@@ -3,93 +3,103 @@ package com.hand.domain;
 import java.util.Date;
 
 public class Customer {
-    private Short customerId;
+	private Short customerId;
 
-    private Byte storeId;
+	private Byte storeId;
 
-    private String firstName;
+	private String firstName;
 
-    private String lastName;
+	private String lastName;
 
-    private String email;
+	private String email;
 
-    private Short addressId;
+	private Short addressId;
 
-    private Boolean active;
+	private Address address;
 
-    private Date createDate;
+	private Boolean active;
 
-    private Date lastUpdate;
+	private Date createDate;
 
-    public Short getCustomerId() {
-        return customerId;
-    }
+	private Date lastUpdate;
 
-    public void setCustomerId(Short customerId) {
-        this.customerId = customerId;
-    }
+	public Short getCustomerId() {
+		return customerId;
+	}
 
-    public Byte getStoreId() {
-        return storeId;
-    }
+	public Address getAddress() {
+		return address;
+	}
 
-    public void setStoreId(Byte storeId) {
-        this.storeId = storeId;
-    }
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public void setCustomerId(Short customerId) {
+		this.customerId = customerId;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName == null ? null : firstName.trim();
-    }
+	public Byte getStoreId() {
+		return storeId;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public void setStoreId(Byte storeId) {
+		this.storeId = storeId;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName == null ? null : lastName.trim();
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName == null ? null : firstName.trim();
+	}
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public Short getAddressId() {
-        return addressId;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName == null ? null : lastName.trim();
+	}
 
-    public void setAddressId(Short addressId) {
-        this.addressId = addressId;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public Boolean getActive() {
-        return active;
-    }
+	public void setEmail(String email) {
+		this.email = email == null ? null : email.trim();
+	}
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
+	public Short getAddressId() {
+		return addressId;
+	}
 
-    public Date getCreateDate() {
-        return createDate;
-    }
+	public void setAddressId(Short addressId) {
+		this.addressId = addressId;
+	}
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
+	public Boolean getActive() {
+		return active;
+	}
 
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
+
+	public void setLastUpdate(Date lastUpdate) {
+		this.lastUpdate = lastUpdate;
+	}
 }

@@ -26,6 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public Customer getLastCustomer() {
+		
 		return customerDao.getLastCustomer();
 	}
 
