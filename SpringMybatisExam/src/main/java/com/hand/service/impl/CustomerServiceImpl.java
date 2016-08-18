@@ -35,13 +35,8 @@ public class CustomerServiceImpl implements CustomerService {
 	 * @param id
 	 * @return
 	 */
+	@Transactional
 	public boolean deleteCustomerById(Short id) {
-//		try {
-//			customerDao.deleteCustomerById(id);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return false;
-//		}
 		if (customerDao.deleteCustomerById(id)>0) {
 			return true;
 		}
