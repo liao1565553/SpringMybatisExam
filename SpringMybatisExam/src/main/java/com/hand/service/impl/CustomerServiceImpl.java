@@ -26,8 +26,27 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public Customer getLastCustomer() {
-		
+
 		return customerDao.getLastCustomer();
+	}
+	
+	/**
+	 * 通过id删除用户
+	 * @param id
+	 * @return
+	 */
+	public boolean deleteCustomerById(Short id) {
+//		try {
+//			customerDao.deleteCustomerById(id);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+		if (customerDao.deleteCustomerById(id)>0) {
+			return true;
+		}
+		
+		return false;
 	}
 
 }

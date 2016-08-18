@@ -26,6 +26,11 @@
 	<select id="getCustomerByID" parameterType="java.lang.Short" resultMap="BaseResultMap">
 		select * from customer where customer_id=#{id}
 	</select>
+	
+	<delete id="deleteCustomerById" parameterType="java.lang.Short" >
+		delete from customer where customer_id=#{id}
+	</delete>
+	
 
 	<!-- 取消外键约束 -->
 	<select id="foreignKeyNoChecks">

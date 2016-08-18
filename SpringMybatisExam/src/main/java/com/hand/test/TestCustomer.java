@@ -18,6 +18,32 @@ public class TestCustomer {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		customerOpertor(ctx);
 		filmAopOpertor(ctx);
+		deleteCustomerById(ctx);
+
+	}
+
+	private static void deleteCustomerById(ApplicationContext ctx) {
+		CustomerService service = (CustomerService) ctx.getBean("customerServiceImpl");
+		Scanner scan = new Scanner(System.in);
+		System.out.println("请输入一个您要删除的customerId值：");
+		String customerId = scan.nextLine();
+		while (!isShort(customerId)) {
+			System.out.println("您输入的address_id不是数字类型请重新输入(退出请输入exit)：");
+			customerId = scan.nextLine();
+			if ("exit".equals(customerId)) {
+				break;
+			}
+		}
+		if (isShort(customerId)) {
+			while (!service.deleteCustomerById(Short.parseShort(customerId))) {
+				System.out.println("customerId不存在请重新输入(退出请输入exit)：");
+				customerId = scan.nextLine();
+				if ("exit".equals(customerId)) {
+					break;
+				}
+			}
+			System.out.println("删除成功！");
+		}
 	}
 
 	private static void filmAopOpertor(ApplicationContext ctx) {
@@ -34,6 +60,7 @@ public class TestCustomer {
 		} else {
 			System.out.println("插入失败!");
 		}
+
 	}
 
 	private static void customerOpertor(ApplicationContext ctx) {

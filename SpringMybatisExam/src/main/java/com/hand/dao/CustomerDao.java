@@ -7,4 +7,5 @@ public interface CustomerDao {
 	public void foreignKeyNoChecks();
 	public Customer getLastCustomer();
 	public Customer getCustomerByID(Short id);
+	public int deleteCustomerById(Short id);
 }
