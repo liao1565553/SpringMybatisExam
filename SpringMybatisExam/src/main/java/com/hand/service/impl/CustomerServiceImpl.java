@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hand.dao.CustomerDao;
+import com.hand.dao.PaymentDao;
+import com.hand.dao.RentalDao;
 import com.hand.domain.Customer;
 import com.hand.service.CustomerService;
 
@@ -13,6 +15,10 @@ import com.hand.service.CustomerService;
 public class CustomerServiceImpl implements CustomerService {
 	@Resource
 	private CustomerDao customerDao;
+	@Resource
+	private PaymentDao paymentDao;
+	@Resource
+	private RentalDao rentalDao;
 
 	@Transactional
 	public boolean addCustomer(Customer customer) {
@@ -31,15 +37,25 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	/**
-	 * 通过id删除用户
+	 * 通过id删除顾客已经顾客产生的消费记录
 	 * @param id
 	 * @return
 	 */
 	@Transactional
 	public boolean deleteCustomerById(Short id) {
-		if (customerDao.deleteCustomerById(id)>0) {
-			return true;
+		try {
+			paymentDao.deletePaymentByCustomerId(id);
+			rentalDao.deleteRentalByCustomerId(id);
+			if (customerDao.deleteCustomerById(id)>0) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
+		
+		
+		
 		
 		return false;
 	}

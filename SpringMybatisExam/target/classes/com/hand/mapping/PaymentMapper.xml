@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hand.dao.PaymentDao" >
+  <resultMap id="BaseResultMap" type="com.hand.domain.Payment" >
+    <id column="payment_id" property="paymentId" jdbcType="SMALLINT" />
+    <result column="customer_id" property="customerId" jdbcType="SMALLINT" />
+    <result column="staff_id" property="staffId" jdbcType="TINYINT" />
+    <result column="rental_id" property="rentalId" jdbcType="INTEGER" />
+    <result column="amount" property="amount" jdbcType="DECIMAL" />
+    <result column="payment_date" property="paymentDate" jdbcType="TIMESTAMP" />
+    <result column="last_update" property="lastUpdate" jdbcType="TIMESTAMP" />
+  </resultMap>
+ 
+ <delete id="deletePaymentByCustomerId" parameterType="java.lang.Short">
+ 	delete from payment where customer_id=#{id}
+ </delete>
+ 
+ 
+ 
+</mapper>

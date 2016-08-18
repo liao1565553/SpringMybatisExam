@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hand.dao.RentalDao" >
+  <resultMap id="BaseResultMap" type="com.hand.domain.Rental" >
+    <id column="rental_id" property="rentalId" jdbcType="INTEGER" />
+    <result column="rental_date" property="rentalDate" jdbcType="TIMESTAMP" />
+    <result column="inventory_id" property="inventoryId" jdbcType="INTEGER" />
+    <result column="customer_id" property="customerId" jdbcType="SMALLINT" />
+    <result column="return_date" property="returnDate" jdbcType="TIMESTAMP" />
+    <result column="staff_id" property="staffId" jdbcType="TINYINT" />
+    <result column="last_update" property="lastUpdate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <delete id="deleteRentalByCustomerId" parameterType="java.lang.Short">
+  	delete from rental where customer_id=#{id}
+  </delete>
+  
+  
+  
+</mapper>

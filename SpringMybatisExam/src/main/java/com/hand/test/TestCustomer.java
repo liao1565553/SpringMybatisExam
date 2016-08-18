@@ -19,12 +19,13 @@ public class TestCustomer {
 		customerOpertor(ctx);
 		filmAopOpertor(ctx);
 		deleteCustomerById(ctx);
-
 	}
 
 	private static void deleteCustomerById(ApplicationContext ctx) {
 		CustomerService service = (CustomerService) ctx.getBean("customerServiceImpl");
 		Scanner scan = new Scanner(System.in);
+		System.out.println();
+		System.out.println("---------------删除customerID部分------------------");
 		System.out.println("请输入一个您要删除的customerId值：");
 		String customerId = scan.nextLine();
 		while (!isShort(customerId)) {
@@ -51,6 +52,7 @@ public class TestCustomer {
 		Film film = new Film();
 		film.setDescription("aaa");
 		film.setLanguageId((byte) 2);
+		System.out.println();
 		System.out.println("----------AOP模块---------");
 		Scanner scan = new Scanner(System.in);
 		System.out.println("请输入title值：");
