@@ -1,7 +1,5 @@
-Æô¶¯¹¤³Ì£¬Æô¶¯testCustomer.java
+å¯åŠ¨å·¥ç¨‹ï¼Œå¯åŠ¨testCustomer.java
 
 mvn exec:java -Dexec.mainClass="com.hand.test.TestCustomer" -Dexec.args="arg0 arg1 arg2"
 
-ÅäÖÃÎÄ¼ş¶¼·ÅÔÚresourceÎÄ¼ş¼Ğ
-
-
+é…ç½®æ–‡ä»¶éƒ½æ”¾åœ¨resourceæ–‡ä»¶å¤¹
